@@ -5,16 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bank.dao.BankInterface;
 import com.bank.entity.Address;
 import com.bank.entity.Bank;
 import com.bank.repository.BankRepository;
 
 @Service
-public class BankService {
+public class BankService implements BankInterface {
 
 	@Autowired
 	private BankRepository repository;
 
+	@Override
 	public Bank saveBank(Bank bank) {
 		return repository.save(bank);
 	}

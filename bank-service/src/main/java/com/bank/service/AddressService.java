@@ -5,16 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bank.dao.AddressInterface;
 import com.bank.entity.Address;
 import com.bank.entity.Bank;
 import com.bank.repository.AddressRepository;
 
 @Service
-public class AddressService {
+public class AddressService implements AddressInterface {
 
 	@Autowired
 	private AddressRepository repository;
 
+	@Override
 	public Address saveAddress(Address address) {
 		return repository.save(address);
 	}
