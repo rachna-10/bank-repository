@@ -21,14 +21,17 @@ public class AddressService implements AddressInterface {
 		return repository.save(address);
 	}
 
+	@Override
 	public List<Address> getAllAddress() {
 		return repository.findAll();
 	}
 
+	@Override
 	public Address getAddressById(long id) {
 		return repository.findById(id).orElse(null);
 	}
 
+	@Override
 	public String deleteAddressById(long id) {
 		repository.deleteById(id);
 		return "Address Deleted";
