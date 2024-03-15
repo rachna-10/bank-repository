@@ -62,15 +62,10 @@ public class BankService implements BankInterface {
 		return balance;
 	}
 
-//	public double depositeAmount(double amount)
-//	{
-//		
-//		double currentBalance = getCurrentBalance();
-//		currentBalance= currentBalance+amount; 
-//		System.out.println("Current balance after deposite "+ amount +" is " + currentBalance);
-//		
-//		return currentBalance;
-//	}
-//	
+	@Override
+	public List<Bank> findAllBanks() {
+		return repository.findAll();
+	}
+
 
 }
