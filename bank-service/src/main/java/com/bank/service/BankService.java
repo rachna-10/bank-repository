@@ -20,19 +20,25 @@ public class BankService implements BankInterface {
 	public Bank saveBank(Bank bank) {
 		return repository.save(bank);
 	}
-
-	public List<Bank> getAllBank() {
+	
+	@Override
+	public List<Bank> getAllbank() {
 		return repository.findAll();
 	}
 
+	@Override
 	public Bank getBankById(long id) {
 		return repository.findById(id).orElse(null);
 	}
 
+	@Override
 	public String deleteBankById(long id) {
 		repository.deleteById(id);
 		return "Bank Deleted";
 	}
+	
+
+
 
 	public double checkBalance() {
 
@@ -61,6 +67,10 @@ public class BankService implements BankInterface {
 		System.out.println("Withdraw balance is:" + balance);
 		return balance;
 	}
+
+	
+
+	
 
 //	public double depositeAmount(double amount)
 //	{

@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bank.dao.CustomerInterface;
+import com.bank.dao.CustomerRepository;
 import com.bank.entity.Customer;
-import com.bank.repository.CustomerRepository;
 
 @Service
 public class CustomerService implements CustomerInterface {

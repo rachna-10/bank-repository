@@ -1,4 +1,4 @@
-package com.bank.repository;
+package com.bank.dao;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

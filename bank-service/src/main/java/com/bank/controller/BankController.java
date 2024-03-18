@@ -33,7 +33,7 @@ public class BankController {
 
 	@GetMapping("/findAll")
 	public List<Bank> getAllBank() {
-		return service.getAllBank();
+		return service.getAllbank();
 	}
 
 	@GetMapping("/findById/{id}")
