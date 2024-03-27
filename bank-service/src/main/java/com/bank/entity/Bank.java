@@ -15,6 +15,7 @@ public class Bank {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	private double Amount;
 	@Column(name = "bank_name")
 	private String bankName;
 	@Column(name = "ifsc_number")
@@ -74,6 +75,16 @@ public class Bank {
 
 	public void setIsEnable(int isEnable) {
 		this.isEnable = isEnable;
+	}
+	
+	
+
+	public double getAmount() {
+		return Amount;
+	}
+
+	public void setAmount(double amount) {
+		Amount = amount;
 	}
 
 	@Override

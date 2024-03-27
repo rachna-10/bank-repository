@@ -34,17 +34,13 @@ public class BankService implements BankInterface {
 		return "Bank Deleted";
 	}
 
-	public double checkBalance() {
-
-		double balance = 5000;
-
-		return balance;
-
+	public double checkBalance(long id) {
+		return repository.findById(id).orElse(null).getBankBalance();
 	}
 
-	public double depositBalance(double amount) {
-		double balance = getCurrentBalance();
-		balance = balance + amount;
+	public double depositBalance(double Amount,long id) {
+		double balance = checkBalance(id) ;
+		balance = balance + Amount;
 		System.out.println("Deposited balance is:" + balance);
 		return balance;
 	}
@@ -55,8 +51,8 @@ public class BankService implements BankInterface {
 		return balance;
 	}
 
-	public double withdrawBalance(double amount) {
-		double balance = getCurrentBalance();
+	public double withdrawBalance(double amount,long id) {
+		double balance = checkBalance(id) ;
 		balance = balance - amount;
 		System.out.println("Withdraw balance is:" + balance);
 		return balance;
@@ -67,5 +63,6 @@ public class BankService implements BankInterface {
 		return repository.findAll();
 	}
 
+	
 
 }

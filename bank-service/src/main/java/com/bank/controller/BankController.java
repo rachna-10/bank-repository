@@ -46,6 +46,31 @@ public class BankController {
 		return service.deleteBankById(id);
 	}
 
+	@GetMapping("/checkbalance/{id}")
+	public double checkbalance(@PathVariable  long id) {
+		return service.checkBalance(id);
+	}
+
+	@PostMapping("/depositBalance/{Amount}/{id}")
+	public double depositBalance(@PathVariable double Amount, @PathVariable long id) {
+		return service.depositBalance(Amount, id);
+	}
+
+	@GetMapping("/getCurrentBalance")
+	public double getCurrentBalance() {
+		return service.getCurrentBalance();
+	}
+
+	@PostMapping("/withdrawBalance/{Amount}/{id}")
+	public double withdrawBalance(@PathVariable double Amount, @PathVariable long id) {
+		return service.withdrawBalance(Amount, id);
+	}
+	
+	@GetMapping("/findAllBanks")
+	public List<Bank> findAllBanks(){
+		return service.findAllBanks();
+	}
+
 //	// BankService service = new BankService();
 //
 //	@Autowired
